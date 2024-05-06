@@ -7,7 +7,7 @@ function CharacterGrid({ characters }) {
         <Container>
             <Row>
                 {characters.map((character, index) => (
-                    <Col xs={6} sm={4} md={2} key={index}>
+                    <Col xs={6} sm={4} md={3} key={index}>
                         <Character character={character} />
                     </Col>
                 ))}

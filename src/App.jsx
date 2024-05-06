@@ -25,7 +25,7 @@ function App() {
     <div>
       {console.log("%c JSX rendered ", "color:red")}
       <Navbar />
-      <h1>Hello</h1>
+
       {charactersList ?
         <CharacterGrid characters={charactersList} />  // Uses CharacterGrid here
         : <h1>Loading characters...</h1>  // Displays while characters are fetched

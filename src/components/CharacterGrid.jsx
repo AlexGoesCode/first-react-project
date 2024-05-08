@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Character from './Character';
-import MyVerticallyCenteredModal from './Modal';
+// import MyVerticallyCenteredModal from './Modal';
 
 function CharacterGrid({ characters }) {
 

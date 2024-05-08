@@ -1,3 +1,15 @@
+.abc {
+  background-color:rgb(255, 248, 238);
+}
+
+.container-fluid {
+background-color:white;
+}
+
+.bg-body {
+color: black;
+}
+
 .card {
   margin-top: 40px;
   margin-left: 20px;
@@ -6,4 +18,37 @@
 
 .h5 {
   text-align: center;
+}
+
+.modal {
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+left: 0;
+top: 0;
+width: 50%;
+height: auto;
+min-height: 800px;
+background-color: rgba(0, 0, 0, 0,5);
+
+}
+
+.modal img {
+  padding: 10px;
+  padding-bottom: 15px;
+  
+}
+
+.modal-body {
+  text-align: center;
+  background-color: rgba(248, 240, 229, 0.641);
+}
+
+button.btn.btn-primary {
+  display: block;
+  margin: 0 auto;
+  color:white;
+  background-color:rgb(156, 185, 237);
+  border-color: white;
 }

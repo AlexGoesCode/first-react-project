@@ -10,11 +10,9 @@ function Character({ character }) {
                 <Card.Img variant="top" src={character.image} />
                 <Card.Body>
                     <Card.Title>{character.name}</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                    <Card.Text>{character.details}
                     </Card.Text>
-                    <Button variant="primary" onClick={() => setModalShow(true)}>character</Button>
+                    <Button variant="primary" onClick={() => setModalShow(true)}>click for more</Button>
                 </Card.Body>
             </Card>
             <MyVerticallyCenteredModal

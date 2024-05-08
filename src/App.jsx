@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import CharacterGrid from './components/CharacterGrid';
-import MyVerticallyCenteredModal from './components/Modal';
+import { Pagination } from './components/Pagination';
+// import MyVerticallyCenteredModal from './components/Modal';
 
 function App() {
   const [charactersList, setCharactersList] = useState(null);

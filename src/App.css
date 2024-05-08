@@ -1,5 +1,9 @@
 .card {
   margin-top: 40px;
   margin-left: 20px;
-  card.background-color: aqua;
+  text-align: center;
+}
+
+.h5 {
+  text-align: center;
 }

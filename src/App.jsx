@@ -2,33 +2,49 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import CharacterGrid from './components/CharacterGrid';
+import MyVerticallyCenteredModal from './components/Modal';
 
 function App() {
-  console.log("%c component rendered", "color:green");
   const [charactersList, setCharactersList] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("...Loading...")
 
-  const fetchCharacters = async () => {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-    console.log('data :>> ', data);
-    const characters = data.results;
-    console.log('characters :>> ', characters);
-    setCharactersList(characters);
+
+  const fetchCharacters = async (searchTerm = '') => {
+    let apiUrl = 'https://rickandmortyapi.com/api/character';
+    if (searchTerm) {
+      apiUrl += `?name=${encodeURIComponent(searchTerm)}`;
+    }
+    try {
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        const data = await response.json();
+        setCharactersList(data.results);
+      } else {
+        setErrorMessage("something went wrong")
+      }
+    } catch (error) {
+      console.log('error :>> ', error);
+      setErrorMessage("some network problem...")
+    }
+
+
   };
 
   useEffect(() => {
-    console.log("%c useEffect run ", "color:orange");
     fetchCharacters();
   }, []);
 
+  const handleSearch = (searchTerm) => {
+    fetchCharacters(searchTerm);
+  };
+
   return (
-    <div>
-      {console.log("%c JSX rendered ", "color:red")}
-      <Navbar />
+    <div className='abc'>
+      <Navbar onSearch={handleSearch} />
 
       {charactersList ?
-        <CharacterGrid characters={charactersList} />  // Uses CharacterGrid here
-        : <h1>Loading characters...</h1>  // Displays while characters are fetched
+        <CharacterGrid characters={charactersList} />
+        : <h1>{errorMessage}</h1>
       }
     </div>
   );

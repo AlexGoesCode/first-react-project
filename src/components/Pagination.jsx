@@ -14,7 +14,12 @@ const paginationBasic = (
   <div>
     <Pagination>{items}</Pagination>
     <br />
-    </div>
-)
 
-export default Pagination;
+    <Pagination size="lg">{items}</Pagination>
+    <br />
+
+    <Pagination size="sm">{items}</Pagination>
+  </div>
+);
+
+render(paginationBasic);

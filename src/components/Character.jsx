@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import MyVerticallyCenteredModal from './Modal';
 
-function Character({ character }) {
+const  Character = ({ character })=> {
     const [modalShow, setModalShow] = useState(false);
     return (
         <>

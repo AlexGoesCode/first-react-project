@@ -18,7 +18,7 @@ function NavScrollExample({ onSearch }) { // Accept a prop for handling search
     };
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body">
             <Container fluid>
                 <Navbar.Brand href="#">Rick and Morty Database</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />

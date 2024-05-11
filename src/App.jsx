@@ -13,6 +13,7 @@ function App() {
   const itemsPerPage = 20;
   const [totalPages, setTotalPages] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredCharacters, setFilteredCharacters] = useState([]);
 
   const fetchCharacters = async (searchTerm, page) => {
     
@@ -42,6 +43,15 @@ function App() {
     if (newSearchTerm !== searchTerm) { // Check if the term actually changed
       setSearchTerm(newSearchTerm); // Update searchTerm state
       setCurrentPage(1); // Reset to first page
+
+      // Immediately filter characters if the list is already fetched
+      if (charactersList.length > 0) {
+        const filtered = charactersList.filter(character =>
+          character.name.toLowerCase().includes(newSearchTerm.toLowerCase())
+        );
+        setFilteredCharacters(filtered);
+        console.log('Filtered characters:', filtered);
+      }
     }
     // setUserSearch(searchTerm)
     // const words = ["one", "two", "thREe", "car", "plane", "red", "yellow"]
@@ -104,15 +114,14 @@ function App() {
       </button>
       </div>
 
-      {charactersList ?
+      {filteredCharacters.length > 0 ?
       <>
-      
-        <CharacterGrid characters={charactersList} />
-        {/* {<PaginationBasic
+        <CharacterGrid characters={filteredCharacters} />
+        {/* /* {<PaginationBasic
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={setCurrentPage}
-        />} */}
+        />} */ */}
         </>
         : <h1>{errorMessage}</h1>
       }

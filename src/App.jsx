@@ -15,8 +15,7 @@ function App() {
 // const [userSearch, setUserSearch] = useState("")
 
   const fetchCharacters = async (searchTerm, page) => {
-   
-
+    
     let apiUrl = `https://rickandmortyapi.com/api/character?page=${page}`;
     if (searchTerm) {
       apiUrl += `&name=${encodeURIComponent(searchTerm)}`;
@@ -52,17 +51,19 @@ function App() {
 
     // fetchCharacters(searchTerm);
   };
+
   function handleButtonClickNext () {
-  
-    console.log("dasdadadasdaknlkn");
+    if (currentPage < totalPages) {
     setCurrentPage(currentPage + 1)
     console.log('currentPage :>> ', currentPage);
+    }
   }
 
   function handleButtonClickPrev() {
-    setCurrentPage(currentPage - 1)
+    if (currentPage > 1) {
+    setCurrentPage(currentPage - 1);
     console.log('currentPage :>> ', currentPage);
-
+    }
   }
 
 

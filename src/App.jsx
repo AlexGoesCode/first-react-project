@@ -52,19 +52,33 @@ function App() {
     // fetchCharacters(searchTerm);
   };
 
-  function handleButtonClickNext () {
-    if (currentPage < totalPages) {
-    setCurrentPage(currentPage + 1)
-    console.log('currentPage :>> ', currentPage);
+  function handlePageChange(direction) {
+    if (direction === 'next' && currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      console.log("Attempting to go to the next page:");
+
+    } else if (direction === 'prev' && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      console.log("Attempting to go to the previous page:");
+
+    } else {
+      console.log("No page change possible.");
     }
   }
 
-  function handleButtonClickPrev() {
-    if (currentPage > 1) {
-    setCurrentPage(currentPage - 1);
-    console.log('currentPage :>> ', currentPage);
-    }
-  }
+  // function handleButtonClickNext () {
+  //   if (currentPage < totalPages) {
+  //   setCurrentPage(currentPage + 1)
+  //   console.log('currentPage :>> ', currentPage);
+  //   }
+  // }
+
+  // function handleButtonClickPrev() {
+  //   if (currentPage > 1) {
+  //   setCurrentPage(currentPage - 1);
+  //   console.log('currentPage :>> ', currentPage);
+  //   }
+  // }
 
 
   useEffect(() => {
@@ -79,10 +93,10 @@ function App() {
       {console.log("%c JSX rendered ", "color:purple")}
       <Navbar onSearch={handleSearch} />
       <div>
-      <button onClick={handleButtonClickPrev}>
+      <button onClick={() => handlePageChange("prev")} disabled={currentPage === 1}>
         Previous
       </button>
-      <button onClick={handleButtonClickNext}  value="next">
+      <button onClick={() => handlePageChange("next")} disabled={currentPage === totalPages}>
         Next
       </button>
       </div>

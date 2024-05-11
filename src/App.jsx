@@ -96,7 +96,14 @@ function App() {
 
   useEffect(() => {
     console.log("%c useEffect run", "color:orange");
-    fetchCharacters(searchTerm, currentPage);
+    fetchCharacters(searchTerm, currentPage).then(() => {
+      if (searchTerm && charactersList.length > 0) {
+        const filtered = charactersList.filter(character =>
+          character.name.toLowerCase(),includes(searchTerm.toLowerCase())
+        );
+        setFilteredCharacters(filtered);
+      }
+    });
   }, [searchTerm, currentPage]);
 
 
@@ -117,11 +124,7 @@ function App() {
       {filteredCharacters.length > 0 ?
       <>
         <CharacterGrid characters={filteredCharacters} />
-        {/* /* {<PaginationBasic
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        />} */ */}
+        
         </>
         : <h1>{errorMessage}</h1>
       }

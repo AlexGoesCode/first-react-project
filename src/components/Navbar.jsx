@@ -9,7 +9,9 @@ function NavScrollExample({ onSearch }) { // Accept a prop for handling search
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearchChange = (event) => {
-        setSearchTerm(event.target.value);
+        const newSearchTerm = event.target.value;
+        setSearchTerm(newSearchTerm); // Update the state with the new search term
+        console.log("User typed:", newSearchTerm);  // Log what the user is typing
     };
 
     const handleSearchSubmit = (event) => {

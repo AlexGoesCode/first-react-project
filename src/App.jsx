@@ -37,10 +37,12 @@ function App() {
   };
 
   
-  const handleSearch = (searchTerm) => {
-    console.log('searchTerm :>> ', searchTerm);
-    setCurrentPage(1);
-    fetchCharacters(searchTerm, 1);
+  const handleSearch = (newSearchTerm) => {
+    console.log('searchTerm :>> ', newSearchTerm);
+    if (newSearchTerm !== searchTerm) { // Check if the term actually changed
+      setSearchTerm(newSearchTerm); // Update searchTerm state
+      setCurrentPage(1); // Reset to first page
+    }
     // setUserSearch(searchTerm)
     // const words = ["one", "two", "thREe", "car", "plane", "red", "yellow"]
 

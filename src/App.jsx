@@ -34,12 +34,13 @@ function App() {
       console.log('error :>> ', error);
       setErrorMessage("some network problem...")
     }
-
-
   };
   
+  
   const handleSearch = (searchTerm) => {
-    // console.log('searchTerm :>> ', searchTerm);
+    console.log('searchTerm :>> ', searchTerm);
+    setCurrentPage(1);
+    fetchCharacters(searchTerm, 1);
     // setUserSearch(searchTerm)
     // const words = ["one", "two", "thREe", "car", "plane", "red", "yellow"]
 

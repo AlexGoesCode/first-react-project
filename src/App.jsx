@@ -12,7 +12,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
   const [totalPages, setTotalPages] = useState(0);
-// const [userSearch, setUserSearch] = useState("")
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchCharacters = async (searchTerm, page) => {
     
@@ -35,7 +35,7 @@ function App() {
       setErrorMessage("some network problem...")
     }
   };
-  
+
   
   const handleSearch = (searchTerm) => {
     console.log('searchTerm :>> ', searchTerm);
@@ -84,8 +84,8 @@ function App() {
 
   useEffect(() => {
     console.log("%c useEffect run", "color:orange");
-    fetchCharacters('', currentPage);
-  }, [currentPage]);
+    fetchCharacters(searchTerm, currentPage);
+  }, [searchTerm, currentPage]);
 
 
   return (

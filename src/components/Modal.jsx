@@ -31,6 +31,4 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-
-
 export default MyVerticallyCenteredModal;

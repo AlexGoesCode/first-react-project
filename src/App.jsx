@@ -46,8 +46,10 @@ function App() {
     const handlePageChange = (direction) => {
         if (direction === 'next' && currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
+            console.log('currentPage :>> ', currentPage);
         } else if (direction === 'prev' && currentPage > 1) {
             setCurrentPage(currentPage - 1);
+            console.log('currentPage :>> ', currentPage);
         }
     };
 

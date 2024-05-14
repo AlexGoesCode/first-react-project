@@ -21,10 +21,10 @@ function NavScrollExample({ onSearch }) { // Accept a prop for handling search
 
     return (
         <Navbar expand="lg" className="bg-body">
-            <Container fluid>
-                <Navbar.Brand href="#">Rick and Morty Database</Navbar.Brand>
+            <Container fluid className='d-flex justify-content-center'>
+                <Navbar.Brand className="justify-content-center" href="#">Rick and Morty Database</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
+                <Navbar.Collapse id="navbarScroll" className="justify-content-center">
                     <Form className="d-flex" onSubmit={handleSearchSubmit}>
                         <Form.Control
                             type="search"

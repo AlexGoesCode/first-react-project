@@ -19,11 +19,11 @@ X
 3. Use the value of what the user types as criteria to filter (using `.filter()` ) the array of characters, using the name attribute.
 X
 4. Do not forget to "normalise" both the user input and the value from the database
-
+X
 5. Put a console log that prints in the console the filtered array.
-
+x
 6. try to find a way to send the new filtered array to the CharactersGrid component
-
+x
 Plan B
 
 1. Create a state variable to store the input typed by the user

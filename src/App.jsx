@@ -76,11 +76,11 @@ function App() {
             console.log("Search input:", newSearchTerm); // See what user types
         setSearchTerm(newSearchTerm.trim().toLowerCase());
         }} />
-        <div>
-            <button onClick={() => handlePageChange("prev")} disabled={currentPage === 1}>
+        <div class="prevnext">
+            <button class="prev" onClick={() => handlePageChange("prev")} disabled={currentPage === 1}>
             Previous
             </button>
-            <button onClick={() => handlePageChange("next")} disabled={currentPage === totalPages}>
+            <button class="next" onClick={() => handlePageChange("next")} disabled={currentPage === totalPages}>
             Next
             </button>
         </div>

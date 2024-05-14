@@ -8,6 +8,7 @@ background-color:white;
 
 .bg-body {
 color: black;
+justify-content: center;
 }
 
 .card {
@@ -51,4 +52,18 @@ button.btn.btn-primary {
   color:white;
   background-color:rgb(165, 189, 234);
   border-color: white;
+}
+
+.prevnext {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px
+}
+
+.navbar {
+  justify-content: center; /* Center navbar contents */
+}
+
+.form-inline {
+  justify-content: center; /* Center form contents if not using d-flex */
 }
